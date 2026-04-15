@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cupen.vercel.app/sitemap.xml

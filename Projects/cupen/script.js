@@ -37,6 +37,11 @@ function validateEmail(v) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
 
+// Swedish phone: 07X-XXX XX XX, 070XXXXXXX, +46XXXXXXXXX, 46XXXXXXXXX
+function validatePhone(v) {
+  return /^(\+46|46|0)[0-9\s\-]{6,13}$/.test(v.trim());
+}
+
 function setError(id, show) {
   const group = document.getElementById(`group-${id}`);
   const input = required[id].el;
@@ -51,6 +56,7 @@ function validateField(id) {
   const val = input.value.trim();
   if (!val) { setError(id, true); return false; }
   if (id === 'epost' && !validateEmail(val)) { setError(id, true); return false; }
+  if (id === 'telefon' && !validatePhone(val)) { setError(id, true); return false; }
   setError(id, false);
   return true;
 }
