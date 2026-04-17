@@ -626,9 +626,8 @@ section { padding: 5rem 0; }
 }
 
 .arrangorer-logo {
-  width: 110px;
-  height: 110px;
-  border-radius: 12px;
+  width: 140px;
+  height: auto;
   object-fit: contain;
   background: transparent;
 }
