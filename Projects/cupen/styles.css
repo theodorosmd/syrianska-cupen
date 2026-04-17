@@ -631,6 +631,13 @@ section { padding: 5rem 0; }
   object-fit: contain;
 }
 
+/* SRF logo is circular — clip to remove white rectangular corners */
+.arrangorer-logo--circle {
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .arrangorer-card h3 { font-size: 1.15rem; }
 .arrangorer-card .founded { font-size: 0.8rem; color: var(--color-gold); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .arrangorer-card p { color: var(--color-text-muted); font-size: 0.9rem; }
