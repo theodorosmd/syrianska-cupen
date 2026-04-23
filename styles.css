@@ -263,7 +263,7 @@ section { padding: 5rem 0; }
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 10vw, 6rem);
+  font-size: clamp(1.8rem, 10vw, 6rem);
   font-weight: 900;
   line-height: 1;
   margin-bottom: 0.25rem;
@@ -743,6 +743,22 @@ section { padding: 5rem 0; }
   background: linear-gradient(90deg, var(--color-gold), transparent);
   border-radius: 2px;
   margin: 1rem 0 0;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .site-header,
+  .hero-actions,
+  .hero-stars,
+  .hero-bg,
+  .mobile-menu-btn,
+  .social-links,
+  .map-placeholder,
+  .site-footer { display: none; }
+
+  body { background: #fff; color: #000; }
+  a { color: #000; text-decoration: underline; }
+  section { padding: 1.5rem 0; break-inside: avoid; }
 }
 
 /* ===== PREFERS-REDUCED-MOTION (WCAG 2.3.3) ===== */

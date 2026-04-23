@@ -1,3 +1,6 @@
+// Replace with your Formspree endpoint: https://formspree.io/f/YOUR_FORM_ID
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 // Mobile nav toggle
 const menuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
@@ -21,6 +24,10 @@ navLinks?.querySelectorAll('a').forEach(link => {
 const form = document.getElementById('anmalanForm');
 const formSuccess = document.getElementById('formSuccess');
 
+if (!form || !formSuccess) {
+  console.error('Form elements not found in DOM');
+}
+
 const required = {
   forening:    { el: null, msg: 'Vänligen ange föreningens namn.' },
   aldersklass: { el: null, msg: 'Vänligen välj åldersklass.' },
@@ -34,7 +41,8 @@ Object.keys(required).forEach(id => {
 });
 
 function validateEmail(v) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const input = document.getElementById('epost');
+  return input ? input.checkValidity() : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
 
 // Swedish phone: 07X-XXX XX XX, 070XXXXXXX, +46XXXXXXXXX, 46XXXXXXXXX
@@ -68,16 +76,41 @@ Object.keys(required).forEach(id => {
   });
 });
 
-form?.addEventListener('submit', e => {
+form?.addEventListener('submit', async e => {
   e.preventDefault();
   const valid = Object.keys(required).map(id => validateField(id)).every(Boolean);
   if (!valid) {
-    // Focus first error
     const firstError = form.querySelector('.error');
     firstError?.focus();
     return;
   }
-  // Show success
-  form.style.display = 'none';
-  formSuccess.style.display = 'block';
+
+  const submitBtn = form.querySelector('.form-submit');
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Skickar…';
+
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      formSuccess.style.display = 'block';
+      formSuccess.focus();
+    } else {
+      const data = await response.json().catch(() => ({}));
+      const msg = data.errors?.map(err => err.message).join(', ') || 'Okänt fel';
+      throw new Error(msg);
+    }
+  } catch {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+    alert(
+      'Det gick inte att skicka anmälan. Försök igen eller kontakta oss på info@syrianskariksforbundet.se'
+    );
+  }
 });

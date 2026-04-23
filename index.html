@@ -27,6 +27,7 @@
   <meta name="twitter:image" content="https://cupen.vercel.app/srf-logo.jpeg" />
 
   <!-- Favicon & theme -->
+  <link rel="icon" type="image/svg+xml" href="sfc-logo.svg" />
   <link rel="icon" type="image/jpeg" href="srf-logo.jpeg" />
   <meta name="theme-color" content="#f0b429" />
 
@@ -313,7 +314,7 @@
         </div>
 
         <div class="anmalan-form" id="anmalanFormWrapper">
-          <form id="anmalanForm" novalidate>
+          <form id="anmalanForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
             <div class="form-row">
               <div class="form-group" id="group-forening">
                 <label for="forening">Föreningsnamn <span class="req" aria-hidden="true">*</span></label>
@@ -386,6 +387,7 @@
                   name="telefon"
                   placeholder="07X-XXX XX XX"
                   autocomplete="tel"
+                  inputmode="tel"
                 />
                 <span class="error-msg" role="alert">Vänligen ange ett telefonnummer.</span>
               </div>
