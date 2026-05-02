@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Syrianska Cupen 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Syrianska Cupen 2026
+X-WR-TIMEZONE:Europe/Stockholm
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Stockholm:20260627T080000
+DTEND;TZID=Europe/Stockholm:20260627T200000
+SUMMARY:Syrianska Cupen 2026
+DESCRIPTION:Fotbollsturnering arrangerad av Syrianska Riksförbundet.\nÖppet för alla SRF-föreningar.\n\nAnmälan: https://cupen.vercel.app/#anmalan
+LOCATION:Bärsta IP\, Södertälje\, Sverige
+URL:https://cupen.vercel.app/
+ORGANIZER;CN=Syrianska Riksförbundet:MAILTO:info@syrianskariksforbundet.se
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

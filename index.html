@@ -60,6 +60,29 @@
   }
   </script>
 
+  <!-- Preload hero image (LCP) -->
+  <link rel="preload" as="image" href="srf-logo.jpeg" />
+
+  <!-- FAQPage structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Vem kan delta i Syrianska Cupen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Syrianska Cupen är öppen för alla föreningar knutna till Syrianska Riksförbundet (SRF)." } },
+      { "@type": "Question", "name": "Hur anmäler man sitt lag?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fyll i anmälningsformuläret på sidan med föreningsnamn, åldersklass, kontaktperson och kontaktuppgifter." } },
+      { "@type": "Question", "name": "Vilka åldersklasser spelas det i?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Herrar senior, Damer senior, Pojkar U17, Flickor U17, Pojkar U15, Flickor U15, Pojkar U13 och Flickor U13." } },
+      { "@type": "Question", "name": "Kostar det något att delta?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Information om eventuell anmälningsavgift meddelas inom kort." } },
+      { "@type": "Question", "name": "Hur länge pågår turneringen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Turneringen äger rum lördagen den 27 juni 2026. Exakta tider publiceras i spelschemat." } }
+    ]
+  }
+  </script>
+
   <!-- Fonts -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -75,7 +98,7 @@
   <!-- ===== HEADER ===== -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a href="#" class="site-logo" aria-label="Syrianska Cupen – startsida">
+      <a href="./" class="site-logo" aria-label="Syrianska Cupen – startsida">
         <img src="srf-logo.jpeg" alt="Syrianska Riksförbundet logotyp" class="logo-img" />
         <div class="logo-text">Syrianska <span>Cupen</span></div>
       </a>
@@ -85,6 +108,7 @@
           <li><a href="#om">Om turneringen</a></li>
           <li><a href="#schema">Schema</a></li>
           <li><a href="#arrangorer">Arrangörer</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#anmalan">Anmälan</a></li>
           <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
         </ul>
@@ -142,6 +166,42 @@
       </div>
 
       <div class="hero-stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+
+      <div class="countdown" id="countdown" aria-label="Nedräkning till turneringen">
+        <div class="countdown-item">
+          <span class="cd-num" id="cd-days">--</span>
+          <span class="cd-label">dagar</span>
+        </div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-item">
+          <span class="cd-num" id="cd-hours">--</span>
+          <span class="cd-label">timmar</span>
+        </div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-item">
+          <span class="cd-num" id="cd-mins">--</span>
+          <span class="cd-label">minuter</span>
+        </div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-item">
+          <span class="cd-num" id="cd-secs">--</span>
+          <span class="cd-label">sekunder</span>
+        </div>
+      </div>
+
+      <div class="hero-share">
+        <a href="ical.ics" download="syrianska-cupen-2026.ics" class="hero-share-link">
+          &#128197; Lägg till i kalender
+        </a>
+        <a href="https://wa.me/?text=Syrianska%20Cupen%202026%20%E2%80%93%2027%20juni%20i%20S%C3%B6dert%C3%A4lje!%20Anm%C3%A4l%20ditt%20lag%3A%20https%3A%2F%2Fcupen.vercel.app%2F"
+           class="hero-share-link" target="_blank" rel="noopener noreferrer" aria-label="Dela på WhatsApp">
+          WhatsApp
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcupen.vercel.app%2F"
+           class="hero-share-link" target="_blank" rel="noopener noreferrer" aria-label="Dela på Facebook">
+          Facebook
+        </a>
+      </div>
     </div>
   </section>
 
@@ -262,7 +322,7 @@
 
       <div class="arrangorer-grid">
         <div class="arrangorer-card">
-          <img src="srf-logo.jpeg" alt="Syrianska Riksförbundet logotyp" class="arrangorer-logo arrangorer-logo--circle" />
+          <img src="srf-logo.jpeg" alt="Syrianska Riksförbundet logotyp" class="arrangorer-logo arrangorer-logo--circle" loading="lazy" />
           <div class="founded">Grundat 1979</div>
           <h3>Syrianska Riksförbundet</h3>
           <p>
@@ -273,7 +333,7 @@
         </div>
 
         <div class="arrangorer-card">
-          <img src="sfc-logo.svg" alt="Syrianska FC Södertälje logotyp" class="arrangorer-logo" />
+          <img src="sfc-logo.svg" alt="Syrianska FC Södertälje logotyp" class="arrangorer-logo" loading="lazy" />
           <div class="founded">Grundat 1977</div>
           <h3>Syrianska FC Södertälje</h3>
           <p>
@@ -417,6 +477,59 @@
     </div>
   </section>
 
+  <!-- ===== FAQ ===== -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <span class="section-label">Vanliga frågor</span>
+      <h2 id="faq-heading">FAQ</h2>
+      <div class="gold-divider"></div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">Vem kan delta i Syrianska Cupen?</summary>
+          <div class="faq-answer">
+            <p>Syrianska Cupen är öppen för alla föreningar knutna till Syrianska Riksförbundet (SRF). Kontakta oss på <a href="mailto:info@syrianskariksforbundet.se">info@syrianskariksforbundet.se</a> om du är osäker om din förening är berättigad.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Hur anmäler man sitt lag?</summary>
+          <div class="faq-answer">
+            <p>Fyll i anmälningsformuläret på denna sida. Ange föreningsnamn, åldersklass, kontaktperson och kontaktuppgifter. Vi återkommer med bekräftelse och mer information.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Vilka åldersklasser spelas det i?</summary>
+          <div class="faq-answer">
+            <p>Turneringen inkluderar: Herrar senior, Damer senior, Pojkar U17, Flickor U17, Pojkar U15, Flickor U15, Pojkar U13 och Flickor U13. Detaljerade regler per klass publiceras inom kort.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Kostar det något att delta?</summary>
+          <div class="faq-answer">
+            <p>Information om eventuell anmälningsavgift meddelas inom kort. Håll utkik här eller kontakta oss direkt.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Var ligger Bärsta IP?</summary>
+          <div class="faq-answer">
+            <p>Bärsta IP ligger i Södertälje. Se <a href="https://www.google.com/maps/search/Bärsta+IP+Södertälje" target="_blank" rel="noopener noreferrer">Google Maps</a> för vägbeskrivning. Södertälje nås enkelt med pendeltåg från Stockholm.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Hur länge pågår turneringen?</summary>
+          <div class="faq-answer">
+            <p>Turneringen äger rum lördagen den 27 juni 2026. Exakta tider för gruppspel, slutspel och prisutdelning publiceras i spelschemat.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== KONTAKT ===== -->
   <section id="kontakt" aria-labelledby="kontakt-heading">
     <div class="container">
@@ -488,11 +601,28 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="footer-logo">Syrianska <span>Cupen</span> 2026</div>
+      <nav class="footer-nav" aria-label="Sidfotslänkar">
+        <a href="#faq">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:info@syrianskariksforbundet.se">Kontakt</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.syrianskariksforbundet.se" target="_blank" rel="noopener noreferrer">SRF</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-gdpr">Dina uppgifter behandlas enligt GDPR och används endast för att hantera din anmälan.</span>
+      </nav>
       <p class="footer-copy">
         © 2026 Syrianska Riksförbundet. Alla rättigheter förbehållna.
       </p>
     </div>
   </footer>
+
+  <!-- Sticky CTA (visible when hero is scrolled past) -->
+  <div class="sticky-cta hidden" id="stickyCta" aria-hidden="true">
+    <a href="#anmalan" class="btn btn-primary">⚽ Anmäl ditt lag</a>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
   <script src="script.js" defer></script>
 </body>

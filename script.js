@@ -1,7 +1,7 @@
 // Replace with your Formspree endpoint: https://formspree.io/f/YOUR_FORM_ID
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
 
-// Mobile nav toggle
+// ===== MOBILE NAV =====
 const menuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
 
@@ -11,7 +11,6 @@ menuBtn?.addEventListener('click', () => {
   menuBtn.setAttribute('aria-expanded', String(isOpen));
 });
 
-// Close nav when a link is clicked
 navLinks?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -20,12 +19,80 @@ navLinks?.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Form validation
+// ===== TOAST =====
+function showToast(message, type = '') {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = message;
+  toast.className = `toast${type ? ' ' + type : ''} show`;
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => toast.classList.remove('show'), 6000);
+}
+
+// ===== COUNTDOWN =====
+const TARGET_DATE = new Date('2026-06-27T08:00:00+02:00');
+
+function updateCountdown() {
+  const diff = TARGET_DATE - Date.now();
+  const el = document.getElementById('countdown');
+  if (!el) return;
+
+  if (diff <= 0) {
+    el.remove();
+    return;
+  }
+
+  const pad = n => String(Math.floor(n)).padStart(2, '0');
+  const days  = diff / 86400000;
+  const hours = (diff % 86400000) / 3600000;
+  const mins  = (diff % 3600000) / 60000;
+  const secs  = (diff % 60000) / 1000;
+
+  const cd = document.getElementById('cd-days');
+  const ch = document.getElementById('cd-hours');
+  const cm = document.getElementById('cd-mins');
+  const cs = document.getElementById('cd-secs');
+  if (cd) cd.textContent = pad(days);
+  if (ch) ch.textContent = pad(hours);
+  if (cm) cm.textContent = pad(mins);
+  if (cs) cs.textContent = pad(secs);
+}
+
+if (document.getElementById('countdown')) {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
+// ===== STICKY CTA =====
+const stickyCta = document.getElementById('stickyCta');
+const heroSection = document.querySelector('.hero');
+const anmalanSection = document.getElementById('anmalan');
+
+if (stickyCta && heroSection) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.target === heroSection) {
+        const hidden = entry.isIntersecting;
+        stickyCta.classList.toggle('hidden', hidden);
+        stickyCta.setAttribute('aria-hidden', String(hidden));
+      }
+      if (entry.target === anmalanSection && entry.isIntersecting) {
+        stickyCta.classList.add('hidden');
+        stickyCta.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(heroSection);
+  if (anmalanSection) observer.observe(anmalanSection);
+}
+
+// ===== FORM VALIDATION =====
 const form = document.getElementById('anmalanForm');
 const formSuccess = document.getElementById('formSuccess');
 
 if (!form || !formSuccess) {
-  console.error('Form elements not found in DOM');
+  console.error('[Syrianska Cupen] Form elements not found');
 }
 
 const required = {
@@ -56,6 +123,7 @@ function setError(id, show) {
   if (!group || !input) return;
   group.classList.toggle('has-error', show);
   input.classList.toggle('error', show);
+  input.setAttribute('aria-invalid', String(show));
 }
 
 function validateField(id) {
@@ -69,7 +137,6 @@ function validateField(id) {
   return true;
 }
 
-// Clear error on input
 Object.keys(required).forEach(id => {
   required[id].el?.addEventListener('input', () => {
     if (required[id].el.classList.contains('error')) validateField(id);
@@ -88,6 +155,7 @@ form?.addEventListener('submit', async e => {
   const submitBtn = form.querySelector('.form-submit');
   const originalText = submitBtn.textContent;
   submitBtn.disabled = true;
+  submitBtn.classList.add('loading');
   submitBtn.textContent = 'Skickar…';
 
   try {
@@ -101,6 +169,7 @@ form?.addEventListener('submit', async e => {
       form.style.display = 'none';
       formSuccess.style.display = 'block';
       formSuccess.focus();
+      window.scrollTo({ top: formSuccess.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
     } else {
       const data = await response.json().catch(() => ({}));
       const msg = data.errors?.map(err => err.message).join(', ') || 'Okänt fel';
@@ -108,9 +177,11 @@ form?.addEventListener('submit', async e => {
     }
   } catch {
     submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
     submitBtn.textContent = originalText;
-    alert(
-      'Det gick inte att skicka anmälan. Försök igen eller kontakta oss på info@syrianskariksforbundet.se'
+    showToast(
+      'Det gick inte att skicka anmälan. Försök igen eller kontakta oss på info@syrianskariksforbundet.se',
+      'error'
     );
   }
 });

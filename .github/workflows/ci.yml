@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          for f in index.html styles.css script.js robots.txt sitemap.xml vercel.json ical.ics; do
+            [ -f "$f" ] || { echo "::error::Missing required file: $f"; exit 1; }
+          done
+          echo "All required files present ✓"
+
+      - name: Warn on large images
+        run: |
+          LIMIT=300000
+          for f in *.jpeg *.jpg *.png; do
+            [ -f "$f" ] || continue
+            size=$(stat -c%s "$f")
+            if [ "$size" -gt "$LIMIT" ]; then
+              echo "::warning file=$f::Image is ${size} bytes – consider converting to WebP"
+            fi
+          done
+
+      - name: Validate sitemap structure
+        run: |
+          grep -q '<urlset' sitemap.xml || { echo "::error::sitemap.xml missing <urlset>"; exit 1; }
+          grep -q 'cupen.vercel.app' sitemap.xml || { echo "::error::sitemap.xml missing expected URL"; exit 1; }
+          echo "Sitemap valid ✓"
+
+      - name: Validate vercel.json
+        run: |
+          python3 -c "import json,sys; json.load(open('vercel.json'))" \
+            && echo "vercel.json valid JSON ✓" \
+            || { echo "::error::vercel.json is not valid JSON"; exit 1; }
+
+      - name: Check Formspree placeholder not in production
+        run: |
+          if grep -q 'YOUR_FORM_ID' script.js; then
+            echo "::warning::Formspree endpoint contains placeholder YOUR_FORM_ID – configure before going live"
+          fi
+
+      - name: Check for accidental secrets
+        run: |
+          if grep -rn 'password\s*=\|api_key\s*=\|apikey\s*=' --include="*.js" --include="*.html" . 2>/dev/null | grep -v '#'; then
+            echo "::error::Possible secret found in source code"
+            exit 1
+          fi
+          echo "No secrets detected ✓"
