@@ -480,7 +480,13 @@
         </div>
 
         <div class="anmalan-form" id="anmalanFormWrapper">
-          <form id="anmalanForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
+          <form id="anmalanForm" method="POST" action="https://formsubmit.co/kansli@syrianska-rf.se" novalidate>
+            <!-- Formsubmit configuration -->
+            <input type="hidden" name="_subject" id="form-subject" value="Anmälan Syrianska Cupen 2026" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- Honeypot anti-spam (must stay empty) -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
             <div class="form-group" id="group-forening">
               <label for="forening">Föreningsnamn <span class="req" aria-hidden="true">*</span></label>
