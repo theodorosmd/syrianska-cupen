@@ -1,7 +1,6 @@
-// Formsubmit.co — no account needed.
-// On the FIRST submission, Formsubmit sends an activation email to kansli@syrianska-rf.se.
-// Click the link in that email once, and all future submissions are delivered automatically.
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/kansli@syrianska-rf.se';
+// Registration form posts to our own Vercel serverless function (/api/anmalan),
+// which emails the submission to the kansli via Resend.
+const FORM_ENDPOINT = '/api/anmalan';
 
 // ===== MOBILE NAV =====
 const menuBtn = document.getElementById('mobileMenuBtn');
@@ -159,17 +158,13 @@ form?.addEventListener('submit', async e => {
   submitBtn.classList.add('loading');
   submitBtn.textContent = 'Skickar…';
 
-  // Dynamic subject: include team name for easy inbox filtering
-  const subjectInput = form.querySelector('#form-subject');
-  if (subjectInput) {
-    subjectInput.value = `Anmälan Syrianska Cupen 2026 – ${required.forening.el.value.trim()}`;
-  }
+  const payload = Object.fromEntries(new FormData(form).entries());
 
   try {
     const response = await fetch(FORM_ENDPOINT, {
       method: 'POST',
-      body: new FormData(form),
-      headers: { Accept: 'application/json' },
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     });
 
     if (response.ok) {
