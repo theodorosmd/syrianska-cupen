@@ -187,7 +187,7 @@ form?.addEventListener('submit', async e => {
     submitBtn.classList.remove('loading');
     submitBtn.textContent = originalText;
     showToast(
-      'Det gick inte att skicka anmälan. Försök igen eller kontakta oss på info@syrianskariksforbundet.se',
+      'Det gick inte att skicka anmälan. Försök igen eller kontakta oss på kansli@syrianska-rf.se',
       'error'
     );
   }
