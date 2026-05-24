@@ -96,11 +96,10 @@ if (!form || !formSuccess) {
 }
 
 const required = {
-  forening:    { el: null, msg: 'Vänligen ange föreningens namn.' },
-  aldersklass: { el: null, msg: 'Vänligen välj åldersklass.' },
-  kontakt:     { el: null, msg: 'Vänligen ange kontaktpersonens namn.' },
-  epost:       { el: null, msg: 'Vänligen ange en giltig e-postadress.' },
-  telefon:     { el: null, msg: 'Vänligen ange ett telefonnummer.' },
+  forening: { el: null, msg: 'Vänligen ange föreningens namn.' },
+  kontakt:  { el: null, msg: 'Vänligen ange kontaktpersonens namn.' },
+  telefon:  { el: null, msg: 'Vänligen ange ett telefonnummer.' },
+  epost:    { el: null, msg: 'Vänligen ange en giltig e-postadress.' },
 };
 
 Object.keys(required).forEach(id => {

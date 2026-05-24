@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syrianska Cupen 2026 – Södertälje, Bärsta IP</title>
-  <meta name="description" content="Syrianska Cupen 2026 – Fotbollsturnering för alla föreningar knutna till Syrianska Riksförbundet. 27 juni 2026, Södertälje, Bärsta IP." />
+  <title>Syrianska Cupen 2026 – 27 juni, Bärsta IP, Södertälje</title>
+  <meta name="description" content="Syrianska Cupen 2026 – 9-manna fotbollsturnering för SRF-föreningar. 27 juni kl 09:00, Bärsta IP Södertälje. Lagavgift 2 500 kr. Folkfest med musik, mat, dans och barnaktiviteter!" />
 
   <!-- Canonical & hreflang -->
   <link rel="canonical" href="https://cupen.vercel.app/" />
@@ -12,8 +12,8 @@
   <link rel="alternate" hreflang="x-default" href="https://cupen.vercel.app/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Syrianska Cupen 2026 – Södertälje, Bärsta IP" />
-  <meta property="og:description" content="Fotbollsturnering för alla föreningar knutna till Syrianska Riksförbundet. 27 juni 2026, Södertälje, Bärsta IP." />
+  <meta property="og:title" content="Syrianska Cupen 2026 – 27 juni, Bärsta IP Södertälje" />
+  <meta property="og:description" content="9-manna fotbollsturnering för SRF-föreningar. Folkfest med musik, mat, dans och barnaktiviteter. Lagavgift 2 500 kr. Anmäl ditt lag nu!" />
   <meta property="og:image" content="https://cupen.vercel.app/srf-logo.jpeg" />
   <meta property="og:url" content="https://cupen.vercel.app/" />
   <meta property="og:type" content="website" />
@@ -22,8 +22,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Syrianska Cupen 2026" />
-  <meta name="twitter:description" content="Fotbollsturnering för SRF-föreningar. 27 juni 2026, Södertälje, Bärsta IP." />
+  <meta name="twitter:title" content="Syrianska Cupen 2026 – 27 juni Södertälje" />
+  <meta name="twitter:description" content="9-manna fotbollsturnering för SRF-föreningar. Folkfest med musik, mat och glädje! Lagavgift 2 500 kr." />
   <meta name="twitter:image" content="https://cupen.vercel.app/srf-logo.jpeg" />
 
   <!-- Favicon & theme -->
@@ -37,10 +37,11 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Syrianska Cupen 2026",
-    "description": "Fotbollsturnering arrangerad av Syrianska Riksförbundet för alla föreningar knutna till SRF.",
-    "startDate": "2026-06-27",
-    "endDate": "2026-06-27",
+    "description": "9-manna fotbollsturnering arrangerad av Syrianska Riksförbundet för föreningar knutna till SRF. Folkfest med musik, mat, dans och barnaktiviteter.",
+    "startDate": "2026-06-27T09:00:00+02:00",
+    "endDate": "2026-06-27T20:00:00+02:00",
     "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
       "@type": "Place",
       "name": "Bärsta IP",
@@ -53,7 +54,15 @@
     "organizer": {
       "@type": "Organization",
       "name": "Syrianska Riksförbundet",
-      "url": "https://www.facebook.com/SyrianskaRiks"
+      "url": "https://www.facebook.com/SyrianskaRiks",
+      "email": "kansli@syrianska-rf.se",
+      "telephone": "+46707398097"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "2500",
+      "priceCurrency": "SEK",
+      "availability": "https://schema.org/InStock"
     },
     "image": "https://cupen.vercel.app/srf-logo.jpeg",
     "url": "https://cupen.vercel.app/"
@@ -70,15 +79,17 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "Vem kan delta i Syrianska Cupen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Syrianska Cupen är öppen för alla föreningar knutna till Syrianska Riksförbundet (SRF)." } },
+        "acceptedAnswer": { "@type": "Answer", "text": "Cupen är öppen för föreningar anslutna till Syrianska Riksförbundet (SRF). Spelare måste vara 16 år eller äldre och får inte vara registrerade för spel i division 3 eller högre." } },
       { "@type": "Question", "name": "Hur anmäler man sitt lag?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Fyll i anmälningsformuläret på sidan med föreningsnamn, åldersklass, kontaktperson och kontaktuppgifter." } },
-      { "@type": "Question", "name": "Vilka åldersklasser spelas det i?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Herrar senior, Damer senior, Pojkar U17, Flickor U17, Pojkar U15, Flickor U15, Pojkar U13 och Flickor U13." } },
-      { "@type": "Question", "name": "Kostar det något att delta?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Information om eventuell anmälningsavgift meddelas inom kort." } },
-      { "@type": "Question", "name": "Hur länge pågår turneringen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Turneringen äger rum lördagen den 27 juni 2026. Exakta tider publiceras i spelschemat." } }
+        "acceptedAnswer": { "@type": "Answer", "text": "Fyll i anmälningsformuläret på sidan med föreningsnamn och kontaktuppgifter. Efter anmälan kontaktar vi er för spelarlista och betalningsinformation." } },
+      { "@type": "Question", "name": "Vad kostar det att delta?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lagavgiften är 2 500 kr per lag. I avgiften ingår en portion mat per spelare. Max 15 spelare per lag." } },
+      { "@type": "Question", "name": "Vilka priser finns det?",
+        "acceptedAnswer": { "@type": "Answer", "text": "1:a plats: 10 000 kr till föreningskassan. 2:a plats: 5 000 kr. 3:e plats: 3 000 kr. 4:e plats: Avgiftsfri anmälan till nästa Syrianska Cupen." } },
+      { "@type": "Question", "name": "Vad är spelformen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Turneringen spelas som 9-manna med offside. Det är en vuxenturnering för spelare 16 år och uppåt." } },
+      { "@type": "Question", "name": "Hur döps lagen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lagnamnet anger staden. Exempelvis: om två lag anmäls från Södertälje heter de Södertälje 1 och Södertälje 2." } }
     ]
   }
   </script>
@@ -106,11 +117,11 @@
       <nav role="navigation" aria-label="Huvudnavigation">
         <ul class="nav-links" id="navLinks">
           <li><a href="#om">Om turneringen</a></li>
+          <li><a href="#regler">Regler &amp; Priser</a></li>
           <li><a href="#schema">Schema</a></li>
           <li><a href="#arrangorer">Arrangörer</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#anmalan">Anmälan</a></li>
-          <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+          <li><a href="#anmalan" class="nav-cta">Anmäl ditt lag</a></li>
         </ul>
       </nav>
 
@@ -138,21 +149,21 @@
       </h1>
 
       <p class="hero-subtitle">
-        Fotbollsturnering för alla föreningar knutna till SRF
+        Syrianska Cupen förenar! Dags att återuppliva klassikern!
       </p>
 
       <div class="hero-meta">
         <div class="hero-meta-item">
-          <span class="icon">📅</span>
-          <span>27 juni 2026</span>
+          <span class="icon" aria-hidden="true">📅</span>
+          <span>27 juni 2026, kl 09:00</span>
         </div>
         <div class="hero-meta-item">
-          <span class="icon">📍</span>
-          <span>Södertälje, Bärsta IP</span>
+          <span class="icon" aria-hidden="true">📍</span>
+          <span>Bärsta IP, Södertälje</span>
         </div>
         <div class="hero-meta-item">
-          <span class="icon">🏆</span>
-          <span>Öppet för SRF-föreningar</span>
+          <span class="icon" aria-hidden="true">⚽</span>
+          <span>9-manna · SRF-föreningar</span>
         </div>
       </div>
 
@@ -193,7 +204,7 @@
         <a href="ical.ics" download="syrianska-cupen-2026.ics" class="hero-share-link">
           &#128197; Lägg till i kalender
         </a>
-        <a href="https://wa.me/?text=Syrianska%20Cupen%202026%20%E2%80%93%2027%20juni%20i%20S%C3%B6dert%C3%A4lje!%20Anm%C3%A4l%20ditt%20lag%3A%20https%3A%2F%2Fcupen.vercel.app%2F"
+        <a href="https://wa.me/?text=Syrianska%20Cupen%202026%20%E2%80%93%2027%20juni%20kl%2009%3A00%20p%C3%A5%20B%C3%A4rsta%20IP%2C%20S%C3%B6dert%C3%A4lje!%20Anm%C3%A4l%20ditt%20lag%3A%20https%3A%2F%2Fcupen.vercel.app%2F"
            class="hero-share-link" target="_blank" rel="noopener noreferrer" aria-label="Dela på WhatsApp">
           WhatsApp
         </a>
@@ -217,7 +228,7 @@
           <div class="info-card-icon">📅</div>
           <h3>Datum</h3>
           <p class="value">27 juni 2026</p>
-          <p>Lördag</p>
+          <p>Lördag · Start kl 09:00</p>
         </div>
         <div class="info-card">
           <div class="info-card-icon">📍</div>
@@ -226,16 +237,16 @@
           <p>Södertälje</p>
         </div>
         <div class="info-card">
-          <div class="info-card-icon">🏟️</div>
-          <h3>Format</h3>
-          <p class="value">Gruppspel + slutspel</p>
-          <p>Mer info följer</p>
+          <div class="info-card-icon">⚽</div>
+          <h3>Spelform</h3>
+          <p class="value">9-manna</p>
+          <p>Gruppspel + slutspel · Offside gäller</p>
         </div>
         <div class="info-card">
-          <div class="info-card-icon">👥</div>
-          <h3>Deltagare</h3>
-          <p class="value">SRF-föreningar</p>
-          <p>Alla föreningar knutna till SRF</p>
+          <div class="info-card-icon">💰</div>
+          <h3>Lagavgift</h3>
+          <p class="value">2 500 kr / lag</p>
+          <p>Inkl. mat · Max 15 spelare</p>
         </div>
       </div>
     </div>
@@ -247,53 +258,137 @@
       <div class="om-grid">
         <div class="om-text">
           <span class="section-label">Om turneringen</span>
-          <h2 id="om-heading">Syrianska Cupen – en fest för fotbollen</h2>
+          <h2 id="om-heading">Syrianska Cupen förenar!</h2>
           <div class="gold-divider"></div>
           <br />
           <p>
-            Syrianska Cupen är en årlig fotbollsturnering arrangerad av Syrianska Riksförbundet (SRF)
-            i samarbete med Syrianska FC Södertälje. Turneringen samlar föreningar från hela Sverige
-            knutna till förbundet.
+            Dags att återuppliva klassikern! Den 27 juni samlas vi på Bärsta IP i Södertälje –
+            vi startar redan kl 09:00. Nu är det dags att samla laget och visa vilka som är bäst
+            i landet på fotboll!
           </p>
           <p>
-            Det är en dag fylld av sport, gemenskap och stolthet – ett tillfälle för föreningar att
-            mötas på planen och fira den syrianska idrottsrörelsen i Sverige.
+            Syrianska Cupen blir mer än bara en turnering – det blir en riktig folkfest fylld med
+            gemenskap, passion och glädje. Fotboll, rivalitet och oförglömliga matcher!
           </p>
-          <div class="badge-mer-info">
-            ℹ️ Mer detaljerad information om format och regler följer inom kort.
-          </div>
+          <p>
+            Det här ska bli en dag för hela familjen där människor från hela landet samlas för
+            gemenskap, glädje och fotboll. Vem tar hem titeln i årets Syrianska Cup?
+            Anmäl ditt lag redan nu och bli en del av något större!
+          </p>
         </div>
 
         <div class="om-features">
           <div class="feature-item">
-            <div class="feature-icon">⚽</div>
+            <div class="feature-icon">🎵</div>
             <div class="feature-text">
-              <h4>Öppet för alla SRF-föreningar</h4>
-              <p>Alla föreningar knutna till Syrianska Riksförbundet är välkomna att delta.</p>
+              <h4>Musik och stämning</h4>
+              <p>Livemusik och härlig folkfestsstämning under hela dagen.</p>
             </div>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">🏆</div>
+            <div class="feature-icon">🍖</div>
             <div class="feature-text">
-              <h4>Tävla och fira</h4>
-              <p>Sätt ditt lag på prov och kämpa om äran i Syrianska Cupen.</p>
+              <h4>Grill och mat</h4>
+              <p>En portion mat per spelare ingår i lagavgiften. Grill och matstånd för alla besökare.</p>
             </div>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">🤝</div>
+            <div class="feature-icon">💃</div>
             <div class="feature-text">
-              <h4>Gemenskap och glädje</h4>
-              <p>En dag att samlas, umgås och stärka banden inom förbundet.</p>
+              <h4>Dansuppvisning</h4>
+              <p>Uppvisning av dans och kulturella inslag under dagen.</p>
             </div>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">📍</div>
+            <div class="feature-icon">🎪</div>
             <div class="feature-text">
-              <h4>Bärsta IP, Södertälje</h4>
-              <p>En fin anläggning med bra förutsättningar för en minnesvärd turnering.</p>
+              <h4>Aktiviteter för barnen</h4>
+              <p>Hoppborg, lekar, prova-på-aktiviteter och roliga överraskningar – en dag för hela familjen!</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGLER & PRISER ===== -->
+  <section id="regler" aria-labelledby="regler-heading">
+    <div class="container">
+      <span class="section-label">Regler &amp; Priser</span>
+      <h2 id="regler-heading">Turneringsregler och priser</h2>
+      <div class="gold-divider"></div>
+
+      <div class="regler-grid">
+
+        <div class="regler-block">
+          <h3 class="regler-subtitle">Spelregler</h3>
+          <ul class="regler-list">
+            <li>
+              <span class="regler-icon" aria-hidden="true">⚽</span>
+              <div><strong>Spelform</strong><span>9-manna</span></div>
+            </li>
+            <li>
+              <span class="regler-icon" aria-hidden="true">🚩</span>
+              <div><strong>Offside</strong><span>Offside gäller</span></div>
+            </li>
+            <li>
+              <span class="regler-icon" aria-hidden="true">🗓️</span>
+              <div><strong>Ålder</strong><span>16 år och uppåt (vuxenturnering)</span></div>
+            </li>
+            <li>
+              <span class="regler-icon" aria-hidden="true">🪪</span>
+              <div><strong>Spelarbehörighet</strong><span>Ej registrerad för spel i division 3 eller högre</span></div>
+            </li>
+            <li>
+              <span class="regler-icon" aria-hidden="true">👥</span>
+              <div><strong>Antal spelare</strong><span>Max 15 spelare per lag</span></div>
+            </li>
+            <li>
+              <span class="regler-icon" aria-hidden="true">🏙️</span>
+              <div><strong>Lagnamn</strong><span>Anger staden, t.ex. Södertälje 1, Södertälje 2</span></div>
+            </li>
+            <li>
+              <span class="regler-icon" aria-hidden="true">🏢</span>
+              <div><strong>Deltagande</strong><span>Endast föreningar anslutna till Syrianska Riksförbundet</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="regler-block">
+          <h3 class="regler-subtitle">Priser</h3>
+          <div class="priser-list">
+            <div class="pris-item pris-guld">
+              <div class="pris-placering">🥇 1:a plats</div>
+              <div class="pris-belopp">10 000 kr</div>
+              <div class="pris-info">till föreningskassan</div>
+            </div>
+            <div class="pris-item pris-silver">
+              <div class="pris-placering">🥈 2:a plats</div>
+              <div class="pris-belopp">5 000 kr</div>
+              <div class="pris-info">till föreningskassan</div>
+            </div>
+            <div class="pris-item pris-brons">
+              <div class="pris-placering">🥉 3:e plats</div>
+              <div class="pris-belopp">3 000 kr</div>
+              <div class="pris-info">till föreningskassan</div>
+            </div>
+            <div class="pris-item pris-fyra">
+              <div class="pris-placering">4:e plats</div>
+              <div class="pris-belopp">Avgiftsfri anmälan</div>
+              <div class="pris-info">till nästa Syrianska Cupen</div>
+            </div>
+          </div>
+
+          <div class="lagavgift-info">
+            <div class="lagavgift-icon" aria-hidden="true">💰</div>
+            <div>
+              <div class="lagavgift-label">Lagavgift</div>
+              <div class="lagavgift-belopp">2 500 kr / lag</div>
+              <div class="lagavgift-inkl">Inkluderar en portion mat per spelare</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -306,8 +401,8 @@
       <div class="gold-divider"></div>
 
       <div class="schema-placeholder">
-        <div class="icon">📋</div>
-        <p><strong>Schemat publiceras inom kort</strong></p>
+        <div class="icon" aria-hidden="true">📋</div>
+        <p><strong>Schemat publiceras innan turneringsstart</strong></p>
         <p>Håll utkik här för matchschema, grupptabeller och resultat.</p>
       </div>
     </div>
@@ -356,91 +451,64 @@
           <br />
           <p>
             Fyll i formuläret för att anmäla din förening till Syrianska Cupen 2026.
-            Vi återkommer med bekräftelse och mer information.
+            Efter anmälan blir ni kontaktade för att skicka in spelarlista och betalningsinformation.
           </p>
 
           <div class="deadline-badge">
-            <div class="dl-icon">⏰</div>
+            <div class="dl-icon" aria-hidden="true">💰</div>
             <div>
-              <div class="dl-label">Sista anmälningsdag</div>
-              <div class="dl-date">Meddelas inom kort</div>
+              <div class="dl-label">Lagavgift</div>
+              <div class="dl-date">2 500 kr per lag</div>
             </div>
           </div>
 
+          <div class="anmalan-villkor">
+            <h3>Villkor</h3>
+            <ul>
+              <li>Anmälan gäller <strong>föreningar anslutna till SRF</strong></li>
+              <li>Spelare måste vara <strong>16 år eller äldre</strong></li>
+              <li>Ej registrerade för <strong>div 3 eller högre</strong></li>
+              <li>Max <strong>15 spelare</strong> per lag</li>
+              <li>Lagavgiften beräknas per anmält lag</li>
+            </ul>
+          </div>
+
           <p class="contact-hint">
-            Frågor? Kontakta oss på
-            <a href="mailto:info@syrianskariksforbundet.se">info@syrianskariksforbundet.se</a>
+            Frågor? Ring <a href="tel:+46707398097">070-739 80 97</a>
+            eller maila <a href="mailto:kansli@syrianska-rf.se">kansli@syrianska-rf.se</a>
           </p>
         </div>
 
         <div class="anmalan-form" id="anmalanFormWrapper">
           <form id="anmalanForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
-            <div class="form-row">
-              <div class="form-group" id="group-forening">
-                <label for="forening">Föreningsnamn <span class="req" aria-hidden="true">*</span></label>
-                <input
-                  type="text"
-                  id="forening"
-                  name="forening"
-                  placeholder="T.ex. Syrianska IF"
-                  autocomplete="organization"
-                />
-                <span class="error-msg" role="alert">Vänligen ange föreningens namn.</span>
-              </div>
-              <div class="form-group" id="group-aldersklass">
-                <label for="aldersklass">Åldersklass <span class="req" aria-hidden="true">*</span></label>
-                <select id="aldersklass" name="aldersklass">
-                  <option value="">Välj åldersklass</option>
-                  <option value="herrar-senior">Herrar senior</option>
-                  <option value="damer-senior">Damer senior</option>
-                  <option value="pojkar-u17">Pojkar U17</option>
-                  <option value="flickor-u17">Flickor U17</option>
-                  <option value="pojkar-u15">Pojkar U15</option>
-                  <option value="flickor-u15">Flickor U15</option>
-                  <option value="pojkar-u13">Pojkar U13</option>
-                  <option value="flickor-u13">Flickor U13</option>
-                </select>
-                <span class="error-msg" role="alert">Vänligen välj åldersklass.</span>
-              </div>
+
+            <div class="form-group" id="group-forening">
+              <label for="forening">Föreningsnamn <span class="req" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="forening"
+                name="forening"
+                placeholder="T.ex. Syrianska IF Södertälje"
+                autocomplete="organization"
+              />
+              <span class="error-msg" role="alert">Vänligen ange föreningens namn.</span>
+            </div>
+
+            <div class="form-group" id="group-kontakt">
+              <label for="kontakt">Kontaktperson – Namn <span class="req" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="kontakt"
+                name="kontakt"
+                placeholder="För- och efternamn"
+                autocomplete="name"
+              />
+              <span class="error-msg" role="alert">Vänligen ange kontaktpersonens namn.</span>
             </div>
 
             <div class="form-row">
-              <div class="form-group" id="group-kontakt">
-                <label for="kontakt">Kontaktperson <span class="req" aria-hidden="true">*</span></label>
-                <input
-                  type="text"
-                  id="kontakt"
-                  name="kontakt"
-                  placeholder="För- och efternamn"
-                  autocomplete="name"
-                />
-                <span class="error-msg" role="alert">Vänligen ange kontaktpersonens namn.</span>
-              </div>
-              <div class="form-group" id="group-roll">
-                <label for="roll">Roll i föreningen</label>
-                <input
-                  type="text"
-                  id="roll"
-                  name="roll"
-                  placeholder="T.ex. tränare, ordförande"
-                />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group" id="group-epost">
-                <label for="epost">E-postadress <span class="req" aria-hidden="true">*</span></label>
-                <input
-                  type="email"
-                  id="epost"
-                  name="epost"
-                  placeholder="din@epost.se"
-                  autocomplete="email"
-                />
-                <span class="error-msg" role="alert">Vänligen ange en giltig e-postadress.</span>
-              </div>
               <div class="form-group" id="group-telefon">
-                <label for="telefon">Telefonnummer <span class="req" aria-hidden="true">*</span></label>
+                <label for="telefon">Telefon <span class="req" aria-hidden="true">*</span></label>
                 <input
                   type="tel"
                   id="telefon"
@@ -451,26 +519,37 @@
                 />
                 <span class="error-msg" role="alert">Vänligen ange ett telefonnummer.</span>
               </div>
+              <div class="form-group" id="group-epost">
+                <label for="epost">E-post <span class="req" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="epost"
+                  name="epost"
+                  placeholder="din@epost.se"
+                  autocomplete="email"
+                />
+                <span class="error-msg" role="alert">Vänligen ange en giltig e-postadress.</span>
+              </div>
             </div>
 
-            <div class="form-group" id="group-meddelande">
-              <label for="meddelande">Övrig information</label>
-              <textarea
-                id="meddelande"
-                name="meddelande"
-                placeholder="Eventuella frågor eller övrig information..."
-              ></textarea>
-            </div>
+            <p class="form-note">
+              Efter anmälan kontaktar vi er för spelarlista och betalningsinformation.
+              Fullständiga regler och praktisk information presenteras inför turneringsstart.
+            </p>
 
             <button type="submit" class="btn btn-primary form-submit">
               ⚽ Skicka anmälan
             </button>
           </form>
 
-          <div class="form-success" id="formSuccess" aria-live="polite">
-            <div class="success-icon">🎉</div>
+          <div class="form-success" id="formSuccess" aria-live="polite" tabindex="-1">
+            <div class="success-icon" aria-hidden="true">🎉</div>
             <h3>Tack för din anmälan!</h3>
-            <p>Vi har tagit emot din anmälan och återkommer med bekräftelse och mer information inom kort.</p>
+            <p>Vi har tagit emot er anmälan och återkommer med betalningsinformation och spelarlista.</p>
+            <p class="success-contact">
+              Vid frågor: <a href="tel:+46707398097">070-739 80 97</a>
+              · <a href="mailto:kansli@syrianska-rf.se">kansli@syrianska-rf.se</a>
+            </p>
           </div>
         </div>
       </div>
@@ -488,28 +567,54 @@
         <details class="faq-item">
           <summary class="faq-question">Vem kan delta i Syrianska Cupen?</summary>
           <div class="faq-answer">
-            <p>Syrianska Cupen är öppen för alla föreningar knutna till Syrianska Riksförbundet (SRF). Kontakta oss på <a href="mailto:info@syrianskariksforbundet.se">info@syrianskariksforbundet.se</a> om du är osäker om din förening är berättigad.</p>
+            <p>Cupen är öppen för föreningar anslutna till Syrianska Riksförbundet (SRF). Spelare måste vara 16 år eller äldre och får inte vara registrerade för spel i division 3 eller högre.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">Hur anmäler man sitt lag?</summary>
           <div class="faq-answer">
-            <p>Fyll i anmälningsformuläret på denna sida. Ange föreningsnamn, åldersklass, kontaktperson och kontaktuppgifter. Vi återkommer med bekräftelse och mer information.</p>
+            <p>Fyll i anmälningsformuläret på denna sida med föreningsnamn och kontaktuppgifter. Efter anmälan kontaktar vi er för att skicka in spelarlista och betalningsinformation.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Vilka åldersklasser spelas det i?</summary>
+          <summary class="faq-question">Vad kostar det att delta?</summary>
           <div class="faq-answer">
-            <p>Turneringen inkluderar: Herrar senior, Damer senior, Pojkar U17, Flickor U17, Pojkar U15, Flickor U15, Pojkar U13 och Flickor U13. Detaljerade regler per klass publiceras inom kort.</p>
+            <p>Lagavgiften är <strong>2 500 kr per lag</strong>. I avgiften ingår en portion mat per spelare. Lagavgiften beräknas per anmält lag. Max 15 spelare per lag.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Kostar det något att delta?</summary>
+          <summary class="faq-question">Vilka regler gäller?</summary>
           <div class="faq-answer">
-            <p>Information om eventuell anmälningsavgift meddelas inom kort. Håll utkik här eller kontakta oss direkt.</p>
+            <p>Turneringen spelas som <strong>9-manna med offside</strong>. Det är en vuxenturnering för spelare 16 år och uppåt. Max 15 spelare per lag. Spelare får ej vara registrerade för spel i division 3 eller högre.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Hur döps lagen?</summary>
+          <div class="faq-answer">
+            <p>Lagnamnet anger staden. Om t.ex. två lag anmäls från Södertälje döps de till <strong>Södertälje 1</strong> och <strong>Södertälje 2</strong>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Vilka priser finns det?</summary>
+          <div class="faq-answer">
+            <p>
+              🥇 <strong>1:a plats</strong>: 10 000 kr till föreningskassan<br />
+              🥈 <strong>2:a plats</strong>: 5 000 kr till föreningskassan<br />
+              🥉 <strong>3:e plats</strong>: 3 000 kr till föreningskassan<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>4:e plats</strong>: Avgiftsfri anmälan till nästa Syrianska Cupen
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Vad händer på plats förutom fotboll?</summary>
+          <div class="faq-answer">
+            <p>Det blir en riktig folkfest! På plats väntar musik och härlig stämning, grill och mat, uppvisning av dans, samt prova-på-aktiviteter från olika klubbar. För barnen finns hoppborg, lekar, aktiviteter och roliga överraskningar.</p>
           </div>
         </details>
 
@@ -517,13 +622,6 @@
           <summary class="faq-question">Var ligger Bärsta IP?</summary>
           <div class="faq-answer">
             <p>Bärsta IP ligger i Södertälje. Se <a href="https://www.google.com/maps/search/Bärsta+IP+Södertälje" target="_blank" rel="noopener noreferrer">Google Maps</a> för vägbeskrivning. Södertälje nås enkelt med pendeltåg från Stockholm.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question">Hur länge pågår turneringen?</summary>
-          <div class="faq-answer">
-            <p>Turneringen äger rum lördagen den 27 juni 2026. Exakta tider för gruppspel, slutspel och prisutdelning publiceras i spelschemat.</p>
           </div>
         </details>
       </div>
@@ -543,23 +641,28 @@
 
           <div class="kontakt-items">
             <div class="kontakt-item">
-              <span class="k-icon">📧</span>
+              <span class="k-icon" aria-hidden="true">📞</span>
               <div>
-                <div class="k-label">E-post</div>
-                <div class="k-value">
-                  <a href="mailto:info@syrianskariksforbundet.se">info@syrianskariksforbundet.se</a>
-                </div>
+                <div class="k-label">Telefon</div>
+                <div class="k-value"><a href="tel:+46707398097">070-739 80 97</a></div>
               </div>
             </div>
             <div class="kontakt-item">
-              <span class="k-icon">📍</span>
+              <span class="k-icon" aria-hidden="true">📧</span>
+              <div>
+                <div class="k-label">E-post</div>
+                <div class="k-value"><a href="mailto:kansli@syrianska-rf.se">kansli@syrianska-rf.se</a></div>
+              </div>
+            </div>
+            <div class="kontakt-item">
+              <span class="k-icon" aria-hidden="true">📍</span>
               <div>
                 <div class="k-label">Plats</div>
                 <div class="k-value">Bärsta IP, Södertälje</div>
               </div>
             </div>
             <div class="kontakt-item">
-              <span class="k-icon">🏛️</span>
+              <span class="k-icon" aria-hidden="true">🏛️</span>
               <div>
                 <div class="k-label">Arrangör</div>
                 <div class="k-value">Syrianska Riksförbundet</div>
@@ -578,16 +681,12 @@
         </div>
 
         <div class="map-placeholder" role="region" aria-label="Platsinformation">
-          <div class="map-icon">🗺️</div>
+          <div class="map-icon" aria-hidden="true">🗺️</div>
           <h4>Bärsta IP</h4>
           <p>Södertälje</p>
-          <p>27 juni 2026</p>
+          <p>27 juni 2026 · kl 09:00</p>
           <br />
-          <a
-            href="https://www.google.com/maps/search/Bärsta+IP+Södertälje"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.google.com/maps/search/Bärsta+IP+Södertälje" target="_blank" rel="noopener noreferrer">
             Öppna i Google Maps →
           </a>
         </div>
@@ -604,19 +703,17 @@
       <nav class="footer-nav" aria-label="Sidfotslänkar">
         <a href="#faq">FAQ</a>
         <span aria-hidden="true">·</span>
-        <a href="mailto:info@syrianskariksforbundet.se">Kontakt</a>
+        <a href="mailto:kansli@syrianska-rf.se">Kontakt</a>
         <span aria-hidden="true">·</span>
         <a href="https://www.syrianskariksforbundet.se" target="_blank" rel="noopener noreferrer">SRF</a>
         <span aria-hidden="true">·</span>
         <span class="footer-gdpr">Dina uppgifter behandlas enligt GDPR och används endast för att hantera din anmälan.</span>
       </nav>
-      <p class="footer-copy">
-        © 2026 Syrianska Riksförbundet. Alla rättigheter förbehållna.
-      </p>
+      <p class="footer-copy">© 2026 Syrianska Riksförbundet. Alla rättigheter förbehållna.</p>
     </div>
   </footer>
 
-  <!-- Sticky CTA (visible when hero is scrolled past) -->
+  <!-- Sticky CTA -->
   <div class="sticky-cta hidden" id="stickyCta" aria-hidden="true">
     <a href="#anmalan" class="btn btn-primary">⚽ Anmäl ditt lag</a>
   </div>

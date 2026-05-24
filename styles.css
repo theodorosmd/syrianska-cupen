@@ -588,6 +588,182 @@ section { padding: 5rem 0; }
 .form-success h3 { color: var(--color-gold); margin-bottom: 0.5rem; }
 .form-success p { color: var(--color-text-muted); font-size: 0.95rem; }
 
+/* ===== REGLER & PRISER ===== */
+#regler { background: var(--color-dark); }
+
+.regler-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.regler-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.regler-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.regler-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.regler-list li div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.regler-list li strong {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.regler-list li span { font-weight: 500; }
+
+.regler-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+/* Priser podium */
+.priser-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.pris-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.pris-placering {
+  font-size: 0.85rem;
+  font-weight: 700;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.pris-belopp {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  flex: 1;
+}
+
+.pris-info {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.pris-guld  { background: rgba(240,180,41,0.1); border-color: rgba(240,180,41,0.4); }
+.pris-silver{ background: rgba(192,192,192,0.08); border-color: rgba(192,192,192,0.3); }
+.pris-brons { background: rgba(205,127,50,0.08); border-color: rgba(205,127,50,0.3); }
+.pris-fyra  { background: var(--color-surface); }
+
+.lagavgift-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+
+.lagavgift-icon { font-size: 1.75rem; flex-shrink: 0; }
+.lagavgift-label { font-size: 0.72rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.lagavgift-belopp { font-size: 1.2rem; font-weight: 800; color: var(--color-gold); }
+.lagavgift-inkl { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 0.1rem; }
+
+/* Anmälan villkor */
+.anmalan-villkor {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+}
+
+.anmalan-villkor h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.anmalan-villkor ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.anmalan-villkor li {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.anmalan-villkor li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}
+
+.anmalan-villkor li strong { color: var(--color-text); }
+
+/* Form note */
+.form-note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Success contact links */
+.success-contact {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.success-contact a { color: var(--color-gold); text-decoration: underline; }
+
+/* Responsive regler */
+@media (max-width: 768px) {
+  .regler-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .pris-info { display: none; }
+}
+
 /* ===== ARRANGÖRER ===== */
 #arrangorer { background: var(--color-surface); }
 

@@ -6,13 +6,13 @@ METHOD:PUBLISH
 X-WR-CALNAME:Syrianska Cupen 2026
 X-WR-TIMEZONE:Europe/Stockholm
 BEGIN:VEVENT
-DTSTART;TZID=Europe/Stockholm:20260627T080000
+DTSTART;TZID=Europe/Stockholm:20260627T090000
 DTEND;TZID=Europe/Stockholm:20260627T200000
 SUMMARY:Syrianska Cupen 2026
-DESCRIPTION:Fotbollsturnering arrangerad av Syrianska Riksförbundet.\nÖppet för alla SRF-föreningar.\n\nAnmälan: https://cupen.vercel.app/#anmalan
+DESCRIPTION:9-manna fotbollsturnering arrangerad av Syrianska Riksförbundet.\nFolkfest med musik\, mat\, dans och barnaktiviteter.\n\nLagavgift: 2 500 kr. Max 15 spelare/lag.\nAnmälan: https://cupen.vercel.app/#anmalan\n\nKontakt: 070-739 80 97 | kansli@syrianska-rf.se
 LOCATION:Bärsta IP\, Södertälje\, Sverige
 URL:https://cupen.vercel.app/
-ORGANIZER;CN=Syrianska Riksförbundet:MAILTO:info@syrianskariksforbundet.se
+ORGANIZER;CN=Syrianska Riksförbundet:MAILTO:kansli@syrianska-rf.se
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
