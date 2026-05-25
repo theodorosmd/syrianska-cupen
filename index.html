@@ -81,7 +81,7 @@
       { "@type": "Question", "name": "Vem kan delta i Syrianska Cupen?",
         "acceptedAnswer": { "@type": "Answer", "text": "Cupen är öppen för föreningar anslutna till Syrianska Riksförbundet (SRF). Spelare måste vara 16 år eller äldre." } },
       { "@type": "Question", "name": "Hur anmäler man sitt lag?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Skicka ett mejl till kansli@syrianska-rf.se eller ring 070-739 80 97. Ange föreningsnamn, kontaktperson och telefonnummer så återkommer vi med spelarlista och betalningsinformation." } },
+        "acceptedAnswer": { "@type": "Answer", "text": "Fyll i anmälningsformuläret på sidan med föreningsnamn och kontaktuppgifter. Efter anmälan kontaktar vi er för spelarlista och betalningsinformation." } },
       { "@type": "Question", "name": "Vad kostar det att delta?",
         "acceptedAnswer": { "@type": "Answer", "text": "Lagavgiften är 2 500 kr per lag. I avgiften ingår en portion mat per spelare. Max 15 spelare per lag." } },
       { "@type": "Question", "name": "Vilka priser finns det?",
@@ -446,7 +446,7 @@
           <div class="gold-divider"></div>
           <br />
           <p>
-            Anmäl din förening till Syrianska Cupen 2026 via e-post eller telefon.
+            Fyll i formuläret för att anmäla din förening till Syrianska Cupen 2026.
             Efter anmälan blir ni kontaktade för att skicka in spelarlista och betalningsinformation.
           </p>
 
@@ -467,30 +467,87 @@
               <li>Lagavgiften beräknas per anmält lag</li>
             </ul>
           </div>
+
+          <p class="contact-hint">
+            Frågor? Ring <a href="tel:+46707398097">070-739 80 97</a>
+            eller maila <a href="mailto:kansli@syrianska-rf.se">kansli@syrianska-rf.se</a>
+          </p>
         </div>
 
-        <div class="anmalan-form">
-          <h3 class="kontakt-rubrik">Så anmäler ni laget</h3>
-          <p class="kontakt-intro">
-            Mejla eller ring oss och ange <strong>föreningsnamn</strong>, <strong>kontaktperson</strong> och <strong>telefonnummer</strong>.
-            Vi återkommer med spelarlista och betalningsinformation.
-          </p>
+        <div class="anmalan-form" id="anmalanFormWrapper">
+          <form id="anmalanForm" method="POST" action="/api/anmalan" novalidate>
+            <!-- Honeypot anti-spam (must stay empty) -->
+            <input type="text" name="_honey" hidden aria-hidden="true" tabindex="-1" autocomplete="off" style="opacity:0;position:absolute;height:0;width:0;overflow:hidden;pointer-events:none" />
 
-          <a class="kontakt-method" href="mailto:kansli@syrianska-rf.se?subject=Anm%C3%A4lan%20Syrianska%20Cupen%202026&body=F%C3%B6reningsnamn%3A%20%0AKontaktperson%3A%20%0ATelefon%3A%20%0AE-post%3A%20">
-            <span class="km-icon" aria-hidden="true">✉️</span>
-            <span class="km-text">
-              <span class="km-label">Maila din anmälan</span>
-              <span class="km-value">kansli@syrianska-rf.se</span>
-            </span>
-          </a>
+            <div class="form-group" id="group-forening">
+              <label for="forening">Föreningsnamn <span class="req" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="forening"
+                name="forening"
+                placeholder="T.ex. Syrianska IF Södertälje"
+                autocomplete="organization"
+              />
+              <span class="error-msg" role="alert">Vänligen ange föreningens namn.</span>
+            </div>
 
-          <a class="kontakt-method" href="tel:+46707398097">
-            <span class="km-icon" aria-hidden="true">📞</span>
-            <span class="km-text">
-              <span class="km-label">Ring direkt</span>
-              <span class="km-value">070-739 80 97</span>
-            </span>
-          </a>
+            <div class="form-group" id="group-kontakt">
+              <label for="kontakt">Kontaktperson – Namn <span class="req" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="kontakt"
+                name="kontakt"
+                placeholder="För- och efternamn"
+                autocomplete="name"
+              />
+              <span class="error-msg" role="alert">Vänligen ange kontaktpersonens namn.</span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" id="group-telefon">
+                <label for="telefon">Telefon <span class="req" aria-hidden="true">*</span></label>
+                <input
+                  type="tel"
+                  id="telefon"
+                  name="telefon"
+                  placeholder="07X-XXX XX XX"
+                  autocomplete="tel"
+                  inputmode="tel"
+                />
+                <span class="error-msg" role="alert">Vänligen ange ett telefonnummer.</span>
+              </div>
+              <div class="form-group" id="group-epost">
+                <label for="epost">E-post <span class="req" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="epost"
+                  name="epost"
+                  placeholder="din@epost.se"
+                  autocomplete="email"
+                />
+                <span class="error-msg" role="alert">Vänligen ange en giltig e-postadress.</span>
+              </div>
+            </div>
+
+            <p class="form-note">
+              Efter anmälan kontaktar vi er för spelarlista och betalningsinformation.
+              Fullständiga regler och praktisk information presenteras inför turneringsstart.
+            </p>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              ⚽ Skicka anmälan
+            </button>
+          </form>
+
+          <div class="form-success" id="formSuccess" aria-live="polite" tabindex="-1">
+            <div class="success-icon" aria-hidden="true">🎉</div>
+            <h3>Tack för din anmälan!</h3>
+            <p>Vi har tagit emot er anmälan och återkommer med betalningsinformation och spelarlista.</p>
+            <p class="success-contact">
+              Vid frågor: <a href="tel:+46707398097">070-739 80 97</a>
+              · <a href="mailto:kansli@syrianska-rf.se">kansli@syrianska-rf.se</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -514,7 +571,7 @@
         <details class="faq-item">
           <summary class="faq-question">Hur anmäler man sitt lag?</summary>
           <div class="faq-answer">
-            <p>Skicka ett mejl till <a href="mailto:kansli@syrianska-rf.se">kansli@syrianska-rf.se</a> eller ring <a href="tel:+46707398097">070-739 80 97</a>. Ange föreningsnamn, kontaktperson och telefonnummer så återkommer vi med spelarlista och betalningsinformation.</p>
+            <p>Fyll i anmälningsformuläret på denna sida med föreningsnamn och kontaktuppgifter. Efter anmälan kontaktar vi er för att skicka in spelarlista och betalningsinformation.</p>
           </div>
         </details>
 
@@ -647,7 +704,7 @@
         <span aria-hidden="true">·</span>
         <a href="https://www.syrianskariksforbundet.se" target="_blank" rel="noopener noreferrer">SRF</a>
         <span aria-hidden="true">·</span>
-        <span class="footer-gdpr">Anmälningsuppgifter behandlas enligt GDPR och används endast för att hantera turneringsdeltagandet.</span>
+        <span class="footer-gdpr">Dina uppgifter behandlas enligt GDPR och används endast för att hantera din anmälan.</span>
       </nav>
       <p class="footer-copy">© 2026 Syrianska Riksförbundet. Alla rättigheter förbehållna.</p>
     </div>
@@ -657,6 +714,9 @@
   <div class="sticky-cta hidden" id="stickyCta" aria-hidden="true">
     <a href="#anmalan" class="btn btn-primary">⚽ Anmäl ditt lag</a>
   </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
   <script src="script.js" defer></script>
 </body>
