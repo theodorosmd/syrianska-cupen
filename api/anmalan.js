@@ -5,7 +5,7 @@
 //   MAIL_FROM       (optional)  - sender, default Resend's shared onboarding address
 
 const MAIL_TO = process.env.MAIL_TO || 'kansli@syrianska-rf.se';
-const MAIL_FROM = process.env.MAIL_FROM || 'Syrianska Cupen <onboarding@resend.dev>';
+const MAIL_FROM = process.env.MAIL_FROM || 'Syrianska Cupen <anmalan@syrianskacupen.se>';
 
 const escapeHtml = value =>
   String(value).replace(/[&<>"']/g, c =>
