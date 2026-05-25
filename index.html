@@ -477,7 +477,7 @@
         <div class="anmalan-form" id="anmalanFormWrapper">
           <form id="anmalanForm" method="POST" action="/api/anmalan" novalidate>
             <!-- Honeypot anti-spam (must stay empty) -->
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="text" name="_honey" hidden aria-hidden="true" tabindex="-1" autocomplete="off" style="opacity:0;position:absolute;height:0;width:0;overflow:hidden;pointer-events:none" />
 
             <div class="form-group" id="group-forening">
               <label for="forening">Föreningsnamn <span class="req" aria-hidden="true">*</span></label>
