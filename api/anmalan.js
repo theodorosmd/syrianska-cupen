@@ -75,7 +75,7 @@ module.exports = async function handler(req, res) {
 
     if (!response.ok) {
       const detail = await response.text().catch(() => '');
-      console.error('Resend error', response.status, '| from:', MAIL_FROM, '| to:', MAIL_TO, '| body:', detail);
+      console.error('Resend error', response.status, detail);
       res.status(502).json({ success: false, error: 'Kunde inte skicka anmälan just nu.' });
       return;
     }
