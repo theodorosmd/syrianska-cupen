@@ -835,6 +835,7 @@ section { padding: 5rem 0; }
 }
 
 .sponsor-tier--main .sponsor-tier-label { font-size: 1rem; }
+.sponsor-tier--brons .sponsor-tier-label { color: #cd7f32; }
 
 .sponsor-grid {
   display: flex;
